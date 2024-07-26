@@ -1,24 +1,24 @@
 import { useState } from "react";
 
-const AddNote = () =>{
+const AddNote = ({handleAddNote}) =>{
     const [noteTitle,setNoteTitle] = useState('');
     const [noteText,setNoteText] = useState('');
-    const charLimit = 125;
+    const characterLimit = 125;
 
-    const hadleTitleChange = (event) =>{
+    const handleTitleChange = (event) =>{
         setNoteTitle(event.target.value);
     }
 
     const handleTextChange = (event) =>{
-        if (charLimit - event.target.value.length >= 0){
+        if (characterLimit - event.target.value.length >= 0){
             setNoteText(event.target.value);
         }
     }
 
     const handleSaveClick = () =>{
         if (noteTitle.trim().length > 0 && noteText.trim().length > 0){
-            // handleAddNote(noteTitle,noteText);
-            setNoteText('')
+            handleAddNote(noteTitle,noteText);
+            setNoteText('');
             setNoteTitle('');
         }
     }
@@ -29,7 +29,7 @@ const AddNote = () =>{
                 type="text"
                 placeholder="Title"
                 value={noteTitle}
-                onChange={hadleTitleChange}
+                onChange={handleTitleChange}
                 className="note-title"
             />
             <textarea
@@ -41,25 +41,15 @@ const AddNote = () =>{
             ></textarea>
             <div className="note-footer">
                 <small>
-                    {charLimit - noteText.length} Space left
+                    {characterLimit - noteText.length} Character left
                 </small>
-                <button className="save" onCanPlay={handleSaveClick}>
+                <button className="save" onClick={handleSaveClick}>
                     Save
                 </button>
             </div>
 
         </div>
     )
-
-
-
-
-
-
-
-
-
-
 
 
 
