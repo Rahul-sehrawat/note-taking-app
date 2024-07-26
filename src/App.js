@@ -1,6 +1,8 @@
+import AddNote from "./components/AddNote";
+
 function App() {
   return (
-    <div> hello rahul</div>
+    <AddNote/>
   );
 }
 
