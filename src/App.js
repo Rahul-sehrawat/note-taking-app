@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import NotesList from './components/NotesList';
 import Search from './components/Search';
 import Pagination from './components/Pagination';
+import Header from './components/Header';
 
 function App() {
 	const initialNotes = [];
@@ -12,6 +13,7 @@ function App() {
 		return savedNotes || initialNotes;
 	});
 	const [searchText, setSearchText] = useState('');
+	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
 		localStorage.setItem('react-notes-app-data', JSON.stringify(notes));
@@ -54,8 +56,9 @@ function App() {
 	const currentNotes = filteredNotes.slice(indexOfFirstNote, indexOfLastNote);
 
 	return (
-		<div>
+		<div className={`${darkMode && 'dark-mode'}`}>
 			<div className='container'>
+				<Header handleToggleDarkMode={setDarkMode} />
 				<Search handleSearchNote={setSearchText} />
 				<NotesList
 					notes={currentNotes}

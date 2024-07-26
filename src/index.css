@@ -21,6 +21,21 @@ code {
 	background-color: #FFBF78;
 }
 
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+.dark-mode {
+	background-color: black;
+	height: 100%
+}
+
+.dark-mode h1 {
+	color: white;
+}
 
 
 .container {
@@ -140,6 +155,38 @@ textarea:focus, input:focus {
     background-color: #e5b30d;
   }
 
+  .name-form {
+	display: flex;
+	align-items: center;
+}
+
+  .name-input {
+	padding: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.save-name-button {
+	padding: 5px 10px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	background-color: #4caf50;
+	color: white;
+	cursor: pointer;
+}
+
+.save-name-button:hover {
+	background-color: #45a049;
+}
+
+.toggle-icon {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
 
 
 
