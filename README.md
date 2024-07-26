@@ -1,13 +1,41 @@
-# Getting Started with Create React App
+# Note-Taking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+**Title:** Note-Taking App
 
-In the project directory, you can run:
+**Description:** This is a simple note-taking application built with React. It allows users to create, edit, and delete notes. Users can also toggle between light and dark mode and paginate through notes. The app saves notes in the browser's local storage, ensuring that they persist even after a page refresh.
 
-### `npm start`
+**Features:**
+- Create, edit, and delete notes
+- Persist notes in local storage
+- Toggle between light and dark mode
+- Pagination for easy navigation through notes
+- Search notes by text
+- Add title and timestamp to each note
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Instructions
+
+**Steps to Install:**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Rahul-sehrawat/note-taking-app.git
+
+2. Navigate to the project directory:
+    ```bash
+    cd note-taking-app
+
+3. Install the dependencies:
+    ```bash
+    npm install
+
+**How to Start**
+
+1. Run the app:
+    ```bash
+    npm start
+
+2. Open your browser and go to http://localhost:3000 to see the app in action.
+
+
 
