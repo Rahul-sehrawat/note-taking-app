@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const AddNote = ({handleAddNote}) =>{
     const [noteTitle,setNoteTitle] = useState('');
     const [noteText,setNoteText] = useState('');
     const characterLimit = 125;
+    const textareaRef = useRef(null)
 
     const handleTitleChange = (event) =>{
         setNoteTitle(event.target.value);
@@ -23,6 +24,13 @@ const AddNote = ({handleAddNote}) =>{
         }
     }
 
+    const hadleKeyDown = (event) =>{
+        if (event.key === 'Enter'){
+            event.preventDefault();
+            textareaRef.current.focus()
+        }
+    };
+
     return (
         <div className="note new">
             <input
@@ -30,9 +38,11 @@ const AddNote = ({handleAddNote}) =>{
                 placeholder="Title"
                 value={noteTitle}
                 onChange={handleTitleChange}
+                onKeyDown={hadleKeyDown}
                 className="note-title"
             />
             <textarea
+                ref={textareaRef}
                 rows='8'
                 cols = '10'
                 placeholder="Type Details Here !"
