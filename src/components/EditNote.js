@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const EditNote = ({ note, handleSave, handleCancel }) => {
 	const [noteTitle, setNoteTitle] = useState(note.title);
 	const [noteText, setNoteText] = useState(note.text);
 	const characterLimit = 125;
+	const textareaRef = useRef(null);
 
 	const handleTitleChange = (event) => {
 		setNoteTitle(event.target.value);
@@ -21,6 +22,13 @@ const EditNote = ({ note, handleSave, handleCancel }) => {
 		}
 	};
 
+	const handleKeyDown = (event) =>{
+		if (event.key === "Enter"){
+			event.preventDefault();
+			textareaRef.current.focus();
+		}
+	};
+
 	return (
 		<div className='note new'>
 			<input
@@ -28,9 +36,11 @@ const EditNote = ({ note, handleSave, handleCancel }) => {
 				placeholder='Title'
 				value={noteTitle}
 				onChange={handleTitleChange}
+				onKeyDown={handleKeyDown}
 				className='note-title'
 			/>
 			<textarea
+				ref={textareaRef}
 				rows='8'
 				cols='10'
 				placeholder='Edit your note...'
