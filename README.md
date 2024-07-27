@@ -37,5 +37,19 @@
 
 2. Open your browser and go to http://localhost:3000 to see the app in action.
 
+## Key Files:
 
+- src/App.js: Main application component.
+- src/components/: Directory containing all React components.
+- src/components/NotesList.js: Component to list all notes.
+- src/components/Note.js: Component for a single note.
+- src/components/AddNote.js: Component to add a new note.
+- src/components/EditNote.js: Component to edit an existing note.
+- src/components/Header.js: Header component with dark mode toggle and title input.
+- src/components/Search.js: Component to search notes.
+- src/components/Pagination.js: Component for pagination.
+
+## API Documentation
+
+This app does not interact with an external API. All data is stored in the browser's local storage.
 
