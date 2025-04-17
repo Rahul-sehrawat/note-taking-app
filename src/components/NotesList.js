@@ -26,6 +26,7 @@ const NotesList = ({
 
 	return (
 		<div className='notes-list'>
+			<AddNote handleAddNote={handleAddNote} />
 			{notes.map((note) => (
 				<div className = "single-note" key={note.id}>
 					{editingNoteId === note.id ? (
@@ -47,7 +48,7 @@ const NotesList = ({
 					)}
 				</div>
 			))}
-			<AddNote handleAddNote={handleAddNote} />
+			{/* <AddNote handleAddNote={handleAddNote} /> */}
 		</div>
 	);
 };
