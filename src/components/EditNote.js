@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 const EditNote = ({ note, handleSave, handleCancel }) => {
 	const [noteTitle, setNoteTitle] = useState(note.title);
 	const [noteText, setNoteText] = useState(note.text);
-	const characterLimit = 125;
+	const characterLimit = 250;
 	const textareaRef = useRef(null);
 
 	const handleTitleChange = (event) => {

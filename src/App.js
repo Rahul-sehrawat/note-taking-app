@@ -28,7 +28,8 @@ function App() {
 			date: date.toLocaleDateString(),
 			time: date.toLocaleTimeString(),
 		};
-		const newNotes = [...notes, newNote];
+		// const newNotes = [...notes, newNote];
+		const newNotes = [newNote,...notes ];
 		setNotes(newNotes);
 	};
 
